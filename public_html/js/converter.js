@@ -5,8 +5,6 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
     $(document).ready(function () 
     {
         
-        var obj = JSON.parse(localStorage.getItem('csv'));
-        console.log(obj);
         $("#upload_button").click(function() { 
             $("#file_upload").click();
         });
