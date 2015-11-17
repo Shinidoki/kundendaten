@@ -27,3 +27,15 @@ jQuery("#kundendaten").jqGrid({
     sortorder: "asc", 
     caption: "Kundendaten" }); 
 jQuery("#kundendaten").jqGrid('filterToolbar',{searchOperators : true});
+jQuery("#kundendaten").jqGrid('navGrid', '#pager', {refreshstate: 'current', search: false, add: false, edit: false, del: false});
+jQuery("#kundendaten").jqGrid('navButtonAdd', '#pager', {
+                caption: "",
+                buttonicon: "ui-icon-calculator",
+                title: "Choose columns",
+                onClickButton: function () {
+                    $(this).jqGrid('columnChooser',
+                        {width: 550, msel_opts: {dividerLocation: 0.5}, modal: true});
+                    $("#colchooser_" + $.jgrid.jqID(this.id) + ' div.available>div.actions')
+                        .prepend('<label style="float:left;position:relative;margin-left:0.6em;top:0.6em">Search:</label>');
+                }
+            });
