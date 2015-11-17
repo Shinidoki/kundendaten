@@ -16,7 +16,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
             var reader = new FileReader();
             var csvData;
 
-            reader.readAsText(files);
+            reader.readAsText(files, 'ISO-8859-1');
             // files is a FileList of File objects. List some properties.
             reader.onload = function(e){
                  csvData = $.csv.toObjects(reader.result, {
