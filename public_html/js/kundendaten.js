@@ -1,12 +1,12 @@
 
 
-var csv = JSON.parse(localStorage.getItem('csv'));
-var header = csv[0];
+var csv = [];
 
+var header = [];
 var colModel1 = [];
-for(var key in header){
-    colModel1.push({label: key, name: key, width: 100});
-}
+
+parseCsv();
+
 jQuery("#kundendaten").jqGrid({ 
     datatype: "local",
     data: csv,
@@ -27,7 +27,7 @@ jQuery("#kundendaten").jqGrid({
     sortorder: "asc", 
     caption: "Kundendaten" }); 
 jQuery("#kundendaten").jqGrid('filterToolbar',{searchOperators : true});
-jQuery("#kundendaten").jqGrid('navGrid', '#pager', {refreshstate: 'current', search: false, add: false, edit: false, del: false});
+jQuery("#kundendaten").jqGrid('navGrid', '#pager', { search: false, add: false, edit: false, del: false});
 jQuery("#kundendaten").jqGrid('navButtonAdd', '#pager', {
                 caption: "",
                 buttonicon: "ui-icon-calculator",
@@ -39,3 +39,16 @@ jQuery("#kundendaten").jqGrid('navButtonAdd', '#pager', {
                         .prepend('<label style="float:left;position:relative;margin-left:0.6em;top:0.6em">Search:</label>');
                 }
             });
+            
+function parseCsv() 
+{
+    csv = JSON.parse(localStorage.getItem('csv'));
+    if(csv !== null){
+        header = csv[0];
+        for(var key in header){
+            colModel1.push({label: key, name: key, width: 100});
+        }
+    } else {
+        csv = [];
+    }
+}

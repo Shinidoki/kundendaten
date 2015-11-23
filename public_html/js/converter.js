@@ -7,7 +7,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
         
         $("#upload_button").click(function() { 
             $("#file_upload").click();
-        });
+            });
 
 
         function handleFileSelect(evt) {
@@ -18,11 +18,13 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
 
             reader.readAsText(files, 'ISO-8859-1');
             // files is a FileList of File objects. List some properties.
-            reader.onload = function(e){
-                 csvData = $.csv.toObjects(reader.result, {
-                             separator: ';'
-                         });
-                 localStorage.setItem('csv', JSON.stringify(csvData));
+            reader.onload = function(){
+                csvData = $.csv.toObjects(reader.result, {
+                            separator: ';'
+                        });
+                localStorage.setItem('csv', JSON.stringify(csvData));
+                
+                location.reload();
             };    
         }
 
