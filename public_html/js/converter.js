@@ -7,7 +7,7 @@ if (window.File && window.FileReader && window.FileList && window.Blob) {
         
         $("#upload_button").click(function() { 
             $("#file_upload").click();
-            });
+        });
 
 
         function handleFileSelect(evt) {
