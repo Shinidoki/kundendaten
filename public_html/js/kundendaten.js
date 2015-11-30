@@ -37,7 +37,19 @@ $(document).ready(function ()
         title: "Choose columns",
         onClickButton: function () {
             $(this).jqGrid('columnChooser',
-                {width: 550, msel_opts: {dividerLocation: 0.5}, modal: true});
+                {width: 550, msel_opts: {dividerLocation: 0.5}, modal: true, "done": function(perm){
+                        if(perm){
+                            this.jqGrid("remapColumns", perm, true);
+                            var columnModels = grid.jqGrid('getGridParam','colModel');
+                            chosenCols = [];
+                            for (var columnModelIndex in columnModels) {
+                                var columnModel = columnModels[columnModelIndex];
+                                if (! columnModel.hidden) {
+                                    chosenCols.push(columnModel.name);
+                                }
+                            }
+                        }
+                }});
             $("#colchooser_" + $.jgrid.jqID(this.id) + ' div.available>div.actions')
                 .prepend('<label style="float:left;position:relative;margin-left:0.6em;top:0.6em">Search:</label>');
             
