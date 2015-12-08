@@ -75,7 +75,7 @@ $(document).ready(function ()
     
     $("#print_button").click(function() { 
         var lastData = grid.jqGrid("getGridParam", "lastSelectedData");
-        localStorage.setItem('gridData', JSON.stringify(lastData));
+        localStorage.setItem('csv', JSON.stringify(lastData));
         localStorage.setItem('chosenCols', JSON.stringify(chosenCols));
         window.location.href = "print.html";
     });
