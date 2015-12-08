@@ -4,7 +4,7 @@ var grid = $("#kundendaten");
 var csv = [];
 var header = [];
 var colModel1 = [];
-var chosenCols = ['Adresse', 'Anrede', 'Name', 'Vorname'];
+var chosenCols = JSON.parse(localStorage.getItem('chosenCols')) !== null ? JSON.parse(localStorage.getItem('chosenCols')) : ['Adresse', 'Anrede', 'Name', 'Vorname'];
 
 $(document).ready(function () 
 {
@@ -50,12 +50,15 @@ $(document).ready(function ()
                                     chosenCols.push(columnModel.name);
                                 }
                             }
+
                             grid.setGridParam({tblwidth:$(window).width() - 5, width: $(window).width() - 5});
+
                         }
                 }});
             $("#colchooser_" + $.jgrid.jqID(this.id) + ' div.available>div.actions')
                 .prepend('<label style="float:left;position:relative;margin-left:0.6em;top:0.6em">Suche:</label>');
-            
+        
+
         }
     });
 
@@ -79,7 +82,6 @@ $(document).ready(function ()
     $("#print_button").click(function() { 
         var lastData = grid.jqGrid("getGridParam", "lastSelectedData");
         localStorage.setItem('csv', JSON.stringify(lastData));
-        localStorage.setItem('chosenCols', JSON.stringify(chosenCols));
         window.location.href = "print.html";
     });
 });
