@@ -50,6 +50,7 @@ $(document).ready(function ()
                                     chosenCols.push(columnModel.name);
                                 }
                             }
+                            localStorage.setItem('chosenCols', JSON.stringify(chosenCols));
 
                             grid.setGridParam({tblwidth:$(window).width() - 5, width: $(window).width() - 5});
 
@@ -58,7 +59,6 @@ $(document).ready(function ()
             $("#colchooser_" + $.jgrid.jqID(this.id) + ' div.available>div.actions')
                 .prepend('<label style="float:left;position:relative;margin-left:0.6em;top:0.6em">Suche:</label>');
         
-
         }
     });
 
