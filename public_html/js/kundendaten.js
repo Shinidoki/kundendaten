@@ -37,7 +37,7 @@ $(document).ready(function ()
         title: "Choose columns",
         onClickButton: function () {
             $(this).jqGrid('columnChooser',
-                {width: 550, msel_opts: {dividerLocation: 0.5}, modal: true, "done": function(perm){
+                {dialog_opts:{height: 550, width:700, modal: true}, msel_opts: {dividerLocation: 0.5}, "done": function(perm){
                         if(perm){
                             this.jqGrid("remapColumns", perm, true);
                             var columnModels = grid.jqGrid('getGridParam','colModel');
