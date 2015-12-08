@@ -20,7 +20,7 @@ $(document).ready(function () {
         var rowInside = "";
         $.each(chosenCols, function(cIndex, cValue){
             if(cValue != 'rn'){
-                rowInside += "<td>" + value[cValue] + "</td>"; 
+                rowInside += "<td class=\"text-nowrap\">" + value[cValue] + "</td>"; 
             }
         });
         tableBody += "<tr>" + rowInside + "</tr>";
