@@ -51,7 +51,7 @@ $(document).ready(function ()
                                 }
                             }
 
-                            grid.setGridParam({tblwidth:$(window).width() - 5, width: $(window).width() - 5});
+                            grid.setGridParam({ width: $(window).width() - 5});
 
                         }
                 }});
