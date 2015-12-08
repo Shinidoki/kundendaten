@@ -14,7 +14,8 @@ $(document).ready(function ()
         datatype: "local",
         data: csv,
         height: 255,
-        autowidth: true,
+        autowidth: false,
+        width: $(window).width() - 5,
         shrinkToFit: false,
         colModel: colModel1,
         rowNum:50,
@@ -37,7 +38,8 @@ $(document).ready(function ()
         title: "Choose columns",
         onClickButton: function () {
             $(this).jqGrid('columnChooser',
-                {dialog_opts:{height: 550, width:700, modal: true}, msel_opts: {dividerLocation: 0.5}, "done": function(perm){
+                {dialog_opts:{height: 550, width:700, modal: true}, msel_opts: {dividerLocation: 0.5}, 
+                    "done": function(perm){
                         if(perm){
                             this.jqGrid("remapColumns", perm, true);
                             var columnModels = grid.jqGrid('getGridParam','colModel');
@@ -48,10 +50,11 @@ $(document).ready(function ()
                                     chosenCols.push(columnModel.name);
                                 }
                             }
+                            grid.setGridParam({tblwidth:$(window).width() - 5, width: $(window).width() - 5});
                         }
                 }});
             $("#colchooser_" + $.jgrid.jqID(this.id) + ' div.available>div.actions')
-                .prepend('<label style="float:left;position:relative;margin-left:0.6em;top:0.6em">Search:</label>');
+                .prepend('<label style="float:left;position:relative;margin-left:0.6em;top:0.6em">Suche:</label>');
             
         }
     });
