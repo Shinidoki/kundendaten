@@ -1,54 +1,45 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>Kundendaten</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="js/libs/jqueryUi/css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
-        <link href="js/libs/jqueryUi/css/jquery-ui.theme.min.css" rel="stylesheet" type="text/css"/>
-        <link href="js/libs/jqgrid/css/ui.jqgrid.min.css" rel="stylesheet" type="text/css"/>
-        <link href="js/libs/jqueryUi/css/ui.multiselect.css" rel="stylesheet" type="text/css"/>
-    </head>
-    <body>
-        <h2 class="text-center">Kundendaten</h2>
-        <input type="file" style="display:none" id="file_upload" />
-        <button id="upload_button" class="btn btn-default center-block">Datei hochladen</button>
-        <button id="print_button" class="btn btn-default center-block">Drucken</button>
-        <table id="kundendaten"></table> <div id="pager" ></div>
-        
-        <br><br>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 panel panel-default">
-                <div class="panel-body">
-                    <ul>
-                        <li>Klicken Sie auf den "Datei hochladen"-Button und wählen sie die exportierte Datei im ".CSV"-Format aus.</li>
-                        <li>(Nun sollten die Daten in der Tabelle angezeigt werden.)</li>
-                        <li>Mithilfe des "Spalten"-Buttons unten Links an der Tabelle können Sie auswählen welche Spalten angezeigt werden sollen.</li>
-                        <li>Die Daten können gefiltert werden, indem in den Feldern unter dem Spaltennamen ein Suchbegriff eingegeben wird.</li>
-                        <li>Mit einem Klick auf den Spaltennamen kann nach dieser Spalte sortiert werden (auf-/absteigend)</li>
-                    </ul>
-              </div>
+   <head>
+      <title>Kundendaten</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+      <link href="js/libs/jqueryUi/css/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+      <link href="js/libs/jqueryUi/css/jquery-ui.theme.min.css" rel="stylesheet" type="text/css"/>
+      <link href="js/libs/jqgrid/css/ui.jqgrid.min.css" rel="stylesheet" type="text/css"/>
+      <link href="js/libs/jqueryUi/css/ui.multiselect.css" rel="stylesheet" type="text/css"/>
+   </head>
+   <body>
+      <h2 class="text-center">Kundendaten</h2>
+      <input type="file" style="display:none" id="file_upload" />
+      <button id="upload_button" class="btn btn-default center-block">Datei hochladen</button>
+      <button id="print_button" class="btn btn-default center-block">Drucken</button>
+      <table id="kundendaten"></table>
+      <div id="pager" ></div>
+      <br><br>
+      <div class="row">
+         <div class="col-xs-offset-2 col-xs-8 panel panel-default">
+            <div class="panel-body">
+               <ul>
+                  <li>Klicken Sie auf den "Datei hochladen"-Button und wählen sie die exportierte Datei im ".CSV"-Format aus.</li>
+                  <li>(Nun sollten die Daten in der Tabelle angezeigt werden.)</li>
+                  <li>Mithilfe des "Spalten"-Buttons unten Links an der Tabelle können Sie auswählen welche Spalten angezeigt werden sollen.</li>
+                  <li>Die Daten können gefiltert werden, indem in den Feldern unter dem Spaltennamen ein Suchbegriff eingegeben wird.</li>
+                  <li>Mit einem Klick auf den Spaltennamen kann nach dieser Spalte sortiert werden (auf-/absteigend)</li>
+               </ul>
             </div>
-        </div>
-        
-        
-        
-        <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
-        <script src="js/libs/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/libs/jqueryUi/jquery-ui.min.js" type="text/javascript"></script>
-        <script src="js/libs/jqgrid/i18n/grid.locale-de.js" type="text/javascript"></script>
-        <script src="js/libs/jqgrid/jquery.jqgrid.min.js" type="text/javascript"></script>
-        <script src="js/libs/jquery/jquery.csv-0.71.min.js" type="text/javascript"></script>
-        <script src="js/libs/jqueryUi/ui.multiselect.js" type="text/javascript"></script>
-        <script src="js/libs/jqueryUi/ui-multiselect-de.js" type="text/javascript"></script>
-        
-        <script src="js/converter.js" type="text/javascript"></script>
-        <script src="js/kundendaten.js" type="text/javascript"></script>
-    </body>
+         </div>
+      </div>
+      <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+      <script src="js/libs/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+      <script src="js/libs/jqueryUi/jquery-ui.min.js" type="text/javascript"></script>
+      <script src="js/libs/jqgrid/i18n/grid.locale-de.js" type="text/javascript"></script>
+      <script src="js/libs/jqgrid/jquery.jqgrid.min.js" type="text/javascript"></script>
+      <script src="js/libs/jquery/jquery.csv-0.71.min.js" type="text/javascript"></script>
+      <script src="js/libs/jqueryUi/ui.multiselect.js" type="text/javascript"></script>
+      <script src="js/libs/jqueryUi/ui-multiselect-de.js" type="text/javascript"></script>
+      <script src="js/converter.js" type="text/javascript"></script>
+      <script src="js/kundendaten.js" type="text/javascript"></script>  
+   </body>
 </html>
