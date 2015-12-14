@@ -13,7 +13,8 @@ $(document).ready(function ()
     grid.jqGrid({ 
         datatype: "local",
         data: csv,
-        height: 255,
+        height: $(window).height() - 550,    
+        minHeight: 300,
         autowidth: false,
         width: $(window).width() - 5,
         shrinkToFit: false,
